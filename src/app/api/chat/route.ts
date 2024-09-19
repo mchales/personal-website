@@ -1,6 +1,6 @@
 import OpenAI from 'openai';
 
-export async function GET(request) {
+export async function GET(request: Request) {
   const { searchParams } = new URL(request.url);
   const userInput = searchParams.get('userInput');
 
@@ -17,7 +17,7 @@ export async function GET(request) {
   const stream = new ReadableStream({
     async start(controller) {
       try {
-        const assistant_id = process.env.OPENAI_ASSISTANT_ID;
+        const assistant_id = process.env.OPENAI_ASSISTANT_ID as string;
 
         const thread = await openai.beta.threads.create();
 
