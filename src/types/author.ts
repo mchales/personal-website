@@ -4,9 +4,6 @@ import type { ISocialLinks } from './socials';
 
 export type IAuthorProps = {
   name: string;
-  role: string;
-  about: string;
-  quotes: string;
   avatarUrl: string;
   verified?: boolean;
   phoneNumber?: string;

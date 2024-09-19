@@ -4,6 +4,7 @@ import React, { useState, useEffect } from 'react';
 
 import type { BoxProps } from '@mui/material/Box';
 import type { IProjectProps } from 'src/types/project';
+
 import remarkGfm from 'remark-gfm';
 import ReactMarkdown from 'react-markdown';
 
@@ -30,9 +31,9 @@ type ProjectProps = BoxProps & {
   project: IProjectProps;
 };
 
-const loadMarkdownFile = async (key: string) => {
+const loadMarkdownFile = async (id: string) => {
   try {
-    const filePath = `/projects/${key}/${key}.md`;
+    const filePath = `/projects/${id}/${id}.md`;
     const response = await fetch(filePath);
     if (!response.ok) throw new Error('File not found');
     const text = await response.text();
@@ -48,9 +49,9 @@ export function ProjectView({ project }: ProjectProps) {
 
   useEffect(() => {
     if (!project.content) {
-      loadMarkdownFile(project.key).then((content) => setMdContent(content));
+      loadMarkdownFile(project.id).then((content) => setMdContent(content));
     }
-  }, [project.content]);
+  }, [project.content, project.id]);
 
   return (
     <>
@@ -64,13 +65,16 @@ export function ProjectView({ project }: ProjectProps) {
             </Typography>
 
             <Box gap={1.5} display="flex" sx={{ my: 5 }}>
-              <Avatar src={project.author.avatarUrl} sx={{ width: 70, height: 70 }} />
+              <Avatar src={project.author.avatarUrl} sx={{ width: 90, height: 90, mt: 1 }} />
               <Box flexGrow={1}>
                 <Typography variant="subtitle1" sx={{ mb: 0.5 }}>
                   {project?.author.name}
                 </Typography>
                 <Typography variant="subtitle2" sx={{ mb: 0.5 }}>
                   Team: {project?.team === '1' ? 'Solo' : `${project?.team} members`}
+                </Typography>
+                <Typography variant="caption" sx={{ mt: 0.5 }}>
+                  Status: {project?.status}
                 </Typography>
                 <ProjectTime createdAt={fDate(project?.createdAt)} duration={project?.duration} />
               </Box>
@@ -99,6 +103,7 @@ export function ProjectView({ project }: ProjectProps) {
                       </a>
                     )}
                   </Stack>
+
                   {!!project?.tags.length && <ProjectTags tags={project?.tags} />}
                 </Stack>
               </Box>

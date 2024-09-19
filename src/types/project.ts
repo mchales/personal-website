@@ -11,19 +11,16 @@ export type IProjectCategoryProps = {
 
 export type IProjectProps = {
   id: string;
-  key: string;
-  title: string;
-  heroUrl: string;
-  tags: string[];
-  content: string;
-  coverUrl: string;
   duration: string;
-  favorited: boolean;
+  title: string;
   description: string;
-  author: IAuthorProps;
-  createdAt: IDateValue;
-  shareLinks?: ISocialLinks;
+  status: string;
   team: string;
+  tags: string[];
+  createdAt: IDateValue;
+  coverUrl: string;
+  content: string;
   github: string;
   youtube: string;
+  author: IAuthorProps;
 };

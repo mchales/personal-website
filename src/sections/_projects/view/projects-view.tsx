@@ -13,7 +13,9 @@ import { ProjectsTitle } from '../projects-title';
 import { ProjectsSidebar } from '../projects-sidebar';
 import { ProjectsSearchMobile } from '../projects-search-mobile';
 
-const projects = projectData.reverse();
+const sortedProjects = projectData.sort(
+  (a, b) => new Date(b.createdAt).getTime() - new Date(a.createdAt).getTime()
+);
 
 export function ProjectsView() {
   const [selectedTags, setSelectedTags] = useState<string[]>([]);
@@ -27,7 +29,7 @@ export function ProjectsView() {
   };
 
   // Filter posts based on selected tags and search query
-  const filteredPosts = projects.filter((project) => {
+  const filteredPosts = sortedProjects.filter((project) => {
     const matchesTags = selectedTags.length
       ? selectedTags.every((tag) => project.tags?.includes(tag))
       : true;
