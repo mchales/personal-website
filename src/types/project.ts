@@ -1,6 +1,5 @@
 import type { IDateValue } from './common';
 import type { IAuthorProps } from './author';
-import type { ISocialLinks } from './socials';
 
 // ----------------------------------------------------------------------
 

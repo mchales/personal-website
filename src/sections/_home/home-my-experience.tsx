@@ -1,14 +1,6 @@
 import { m } from 'framer-motion';
 
-import {
-  Box,
-  Grid,
-  Link,
-  Stack,
-  useTheme,
-  Container,
-  Typography,
-} from '@mui/material';
+import { Box, Grid, Link, Stack, useTheme, Container, Typography } from '@mui/material';
 
 import { Iconify } from 'src/components/iconify';
 import { varFade, MotionViewport } from 'src/components/animate';
@@ -34,7 +26,7 @@ export function HomeMyExperience() {
     },
     {
       category: 'Cloud & Databases',
-      items: ['PostgreSQL', 'Amazon RDS', 'Amazon S3', 'Amazon EMR', 'Heroku', 'Redis'],
+      items: ['PostgreSQL', 'Amazon RDS', 'Amazon S3', 'Amazon EMR', 'Heroku', 'Docker', 'Redis'],
       icon: 'carbon:cloud',
     },
     {

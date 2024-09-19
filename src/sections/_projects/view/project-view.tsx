@@ -1,12 +1,11 @@
 'use client';
 
-import React, { useState, useEffect } from 'react';
-
 import type { BoxProps } from '@mui/material/Box';
 import type { IProjectProps } from 'src/types/project';
 
 import remarkGfm from 'remark-gfm';
 import ReactMarkdown from 'react-markdown';
+import React, { useState, useEffect } from 'react';
 
 import Box from '@mui/material/Box';
 import Stack from '@mui/material/Stack';
