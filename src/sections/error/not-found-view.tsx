@@ -27,7 +27,7 @@ export function NotFoundView() {
 
         <m.div variants={varBounce().in}>
           <Typography sx={{ color: 'text.secondary' }}>
-            It looks like you got lost, or I made a mistake. Either way, let's head back home.
+            It looks like you got lost, or I made a mistake. Either way, let&apos;s head back home.
           </Typography>
         </m.div>
 

@@ -3,22 +3,17 @@ import type { BoxProps } from '@mui/material/Box';
 import { m } from 'framer-motion';
 
 import Box from '@mui/material/Box';
+import Link from '@mui/material/Link';
 import Stack from '@mui/material/Stack';
-import Button from '@mui/material/Button';
+import Tooltip from '@mui/material/Tooltip';
 import { useTheme } from '@mui/material/styles';
 import Container from '@mui/material/Container';
 import Typography from '@mui/material/Typography';
-import Link from '@mui/material/Link';
-import Tooltip from '@mui/material/Tooltip';
-
-import { paths } from 'src/routes/paths';
 
 import { CONFIG } from 'src/config-global';
-import { varAlpha, bgGradient, textGradient } from 'src/theme/styles';
 
-import { Iconify } from 'src/components/iconify';
-import { SvgColor } from 'src/components/svg-color';
 import { varFade, MotionViewport } from 'src/components/animate';
+
 import { HomeImageCarousel } from 'src/sections/_home/home-image-carousel';
 
 // ----------------------------------------------------------------------

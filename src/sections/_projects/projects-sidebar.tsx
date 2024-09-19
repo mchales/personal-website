@@ -1,17 +1,11 @@
 import Box from '@mui/material/Box';
-import Link from '@mui/material/Link';
 import Chip from '@mui/material/Chip';
 import Stack from '@mui/material/Stack';
-import Avatar from '@mui/material/Avatar';
 import TextField from '@mui/material/TextField';
 import Typography from '@mui/material/Typography';
-import IconButton from '@mui/material/IconButton';
 import InputAdornment from '@mui/material/InputAdornment';
 
-import { CONFIG } from 'src/config-global';
-
 import { Iconify } from 'src/components/iconify';
-import { SvgColor } from 'src/components/svg-color';
 
 // ----------------------------------------------------------------------
 

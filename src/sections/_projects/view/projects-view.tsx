@@ -1,17 +1,17 @@
 'use client';
 
 import React, { useState } from 'react';
-import Button from '@mui/material/Button';
+
 import Grid from '@mui/material/Unstable_Grid2';
 import Container from '@mui/material/Container';
 
 import { _tags } from 'src/data/projects/assets';
-import { ProjectsSearchMobile } from '../projects-search-mobile';
-import { ProjectsSidebar } from '../projects-sidebar';
+import { projectData } from 'src/data/projects/_projects';
+
 import { ProjectPosts } from '../projects-posts';
 import { ProjectsTitle } from '../projects-title';
-
-import { projectData } from 'src/data/projects/_projects';
+import { ProjectsSidebar } from '../projects-sidebar';
+import { ProjectsSearchMobile } from '../projects-search-mobile';
 
 const projects = projectData.reverse();
 

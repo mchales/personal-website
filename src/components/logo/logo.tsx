@@ -4,7 +4,6 @@ import type { CSSObject } from '@mui/material/styles';
 import { forwardRef } from 'react';
 
 import Box from '@mui/material/Box';
-import { useTheme } from '@mui/material/styles';
 
 import { RouterLink } from 'src/routes/components';
 
@@ -20,10 +19,6 @@ export type LogoProps = BoxProps & {
 
 export const Logo = forwardRef<HTMLDivElement, LogoProps>(
   ({ href = '/', isSingle = false, disableLink = false, sx, className, ...other }, ref) => {
-    const theme = useTheme();
-
-    const PRIMARY_MAIN = theme.vars.palette.primary.main;
-
     const singleLogo = (
       <svg
         xmlns="http://www.w3.org/2000/svg"

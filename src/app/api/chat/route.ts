@@ -27,7 +27,7 @@ export async function GET(request) {
         });
 
         const runStream = openai.beta.threads.runs.stream(thread.id, {
-          assistant_id: assistant_id,
+          assistant_id,
         });
 
         let buffer = '';

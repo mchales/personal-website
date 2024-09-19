@@ -1,21 +1,20 @@
 import { m } from 'framer-motion';
+
 import {
   Box,
+  Grid,
+  Link,
+  Stack,
+  useTheme,
   Container,
   Typography,
-  Grid,
-  Avatar,
-  Stack,
-  useMediaQuery,
-  useTheme,
-  Link,
 } from '@mui/material';
-import { MotionViewport, varFade } from 'src/components/animate';
+
 import { Iconify } from 'src/components/iconify';
+import { varFade, MotionViewport } from 'src/components/animate';
 
 export function HomeMyExperience() {
   const theme = useTheme();
-  const isMobile = useMediaQuery(theme.breakpoints.down('sm'));
 
   const skills = [
     {

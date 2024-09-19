@@ -1,6 +1,7 @@
-import type { BoxProps } from '@mui/material/Box';
-
 import { useEffect } from 'react';
+import image1 from 'public/assets/images/home/home-pic-1.png';
+import image2 from 'public/assets/images/home/home-pic-2.jpg';
+import image3 from 'public/assets/images/home/home-pic-3.jpg';
 
 import Box from '@mui/material/Box';
 import Tooltip from '@mui/material/Tooltip';
@@ -14,10 +15,6 @@ import {
   CarouselThumbs,
   CarouselArrowFloatButtons,
 } from 'src/components/carousel';
-
-import image1 from 'public/assets/images/home/home-pic-1.png';
-import image2 from 'public/assets/images/home/home-pic-2.jpg';
-import image3 from 'public/assets/images/home/home-pic-3.jpg';
 
 // ----------------------------------------------------------------------
 
@@ -48,7 +45,7 @@ export function HomeImageCarousel() {
     if (lightbox.open) {
       carousel.mainApi?.scrollTo(lightbox.selected, true);
     }
-  }, [carousel.mainApi, lightbox.selected]);
+  }, [carousel.mainApi, lightbox.selected, lightbox.open]);
 
   return (
     <>

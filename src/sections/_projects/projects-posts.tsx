@@ -1,14 +1,15 @@
-import type { IPostProps } from 'src/types/blog';
 import type { BoxProps } from '@mui/material/Box';
+import type { IProjectProps } from 'src/types/project';
 import type { Theme, SxProps } from '@mui/material/styles';
 
 import Box from '@mui/material/Box';
 import Link from '@mui/material/Link';
+import Chip from '@mui/material/Chip';
 import Stack from '@mui/material/Stack';
-import Button from '@mui/material/Button';
-import Avatar from '@mui/material/Avatar';
-import Typography from '@mui/material/Typography';
-import Chip from '@mui/material/Chip'; // Import Chip
+import Typography from '@mui/material/Typography'; // Import Chip
+
+import { useMediaQuery } from '@mui/material';
+import { useTheme } from '@mui/material/styles';
 
 import { paths } from 'src/routes/paths';
 import { RouterLink } from 'src/routes/components';
@@ -16,16 +17,13 @@ import { RouterLink } from 'src/routes/components';
 import { fDate } from 'src/utils/format-time';
 
 import { Image } from 'src/components/image';
-import { Iconify } from 'src/components/iconify';
-import { useTheme } from '@mui/material/styles';
-import { useMediaQuery } from '@mui/material';
 
 import { ProjectTime } from './project-time';
 
 // ----------------------------------------------------------------------
 
 type Props = BoxProps & {
-  posts: IPostProps[];
+  posts: IProjectProps[];
   selectedTags: string[];
   onTagClick: (tag: string) => void;
   searchQuery: string;
@@ -40,37 +38,33 @@ export function ProjectPosts({
   ...other
 }: Props) {
   return (
-    <>
-      <Box
-        sx={{
-          columnGap: 4,
+    <Box
+      sx={{
+        columnGap: 4,
 
-          ...sx,
-        }}
-        {...other}
-      >
-        {posts.map((post, index) => (
-          <PostItem
-            key={post.id}
-            post={post}
-            selectedTags={selectedTags}
-            onTagClick={onTagClick}
-            searchQuery={searchQuery}
-            index={index}
-            sx={{ breakInside: 'avoid', mb: 4 }}
-          />
-        ))}
-      </Box>
-    </>
+        ...sx,
+      }}
+      {...other}
+    >
+      {posts.map((post, index) => (
+        <PostItem
+          key={post.id}
+          post={post}
+          selectedTags={selectedTags}
+          onTagClick={onTagClick}
+          searchQuery={searchQuery}
+          sx={{ breakInside: 'avoid', mb: 4 }}
+        />
+      ))}
+    </Box>
   );
 }
 
 // ----------------------------------------------------------------------
 
 type PostItemProps = {
-  index: number;
   sx?: SxProps<Theme>;
-  post: IPostProps;
+  post: IProjectProps;
   selectedTags: string[];
   onTagClick: (tag: string) => void;
   searchQuery: string;
@@ -166,7 +160,7 @@ export function PostItem({
           <Image
             src={post.coverUrl}
             alt={post.title}
-            ratio={'4/3'}
+            ratio="4/3"
             sx={{ borderRadius: 1.5, width: '250px' }}
           />
         </Stack>

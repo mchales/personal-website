@@ -1,39 +1,24 @@
 'use client';
 
-import { useState, useCallback } from 'react';
+import type { BoxProps } from '@mui/material/Box';
+import type { IProjectProps } from 'src/types/project';
 
 import Box from '@mui/material/Box';
+import Stack from '@mui/material/Stack';
 import Avatar from '@mui/material/Avatar';
-import Button from '@mui/material/Button';
 import Divider from '@mui/material/Divider';
-import Popover from '@mui/material/Popover';
-import Checkbox from '@mui/material/Checkbox';
-import MenuItem from '@mui/material/MenuItem';
 import Grid from '@mui/material/Unstable_Grid2';
 import Container from '@mui/material/Container';
 import Typography from '@mui/material/Typography';
-import IconButton from '@mui/material/IconButton';
-import Stack from '@mui/material/Stack';
-
-import { paths } from 'src/routes/paths';
-
-import { usePopover } from 'src/hooks/use-popover';
 
 import { fDate } from 'src/utils/format-time';
 
 import { CONFIG } from 'src/config-global';
 
-import { Iconify } from 'src/components/iconify';
 import { Markdown } from 'src/components/markdown';
-import { SvgColor } from 'src/components/svg-color';
-import { CustomBreadcrumbs } from 'src/components/custom-breadcrumbs';
 
 import { ProjectTags } from '../project-tags';
 import { ProjectTime } from '../project-time';
-
-import { projectData } from 'src/data/projects/_projects';
-import type { IProjectProps } from 'src/types/project';
-import type { BoxProps } from '@mui/material/Box';
 
 // ----------------------------------------------------------------------
 type ProjectProps = BoxProps & {
@@ -41,14 +26,6 @@ type ProjectProps = BoxProps & {
 };
 
 export function ProjectView({ project }: ProjectProps) {
-  const openSocial = usePopover();
-
-  const [favorite, setFavorite] = useState(project?.favorited);
-
-  const handleChangeFavorite = useCallback((event: React.ChangeEvent<HTMLInputElement>) => {
-    setFavorite(event.target.checked);
-  }, []);
-
   return (
     <>
       <Divider />

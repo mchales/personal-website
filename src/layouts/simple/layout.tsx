@@ -2,27 +2,19 @@
 
 import type { Theme, SxProps, Breakpoint } from '@mui/material/styles';
 
-import Box from '@mui/material/Box';
-import Link from '@mui/material/Link';
 import Alert from '@mui/material/Alert';
 import { useTheme } from '@mui/material/styles';
-
-import { paths } from 'src/routes/paths';
-import { RouterLink } from 'src/routes/components';
 
 import { useBoolean } from 'src/hooks/use-boolean';
 
 import { Logo } from 'src/components/logo';
 
-import { langs } from '../config-langs';
 import { navData } from '../config-nav-main';
 import { Main, CompactContent } from './main';
 import { NavMobile } from '../main/nav/mobile';
 import { LayoutSection } from '../core/layout-section';
 import { HeaderSection } from '../core/header-section';
 import { MenuButton } from '../components/menu-button';
-import { SettingsButton } from '../components/settings-button';
-import { LanguagePopover } from '../components/language-popover';
 
 // ----------------------------------------------------------------------
 

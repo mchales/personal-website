@@ -1,18 +1,19 @@
 import { useState } from 'react';
+import { m } from 'framer-motion';
+import remarkGfm from 'remark-gfm';
+import ReactMarkdown from 'react-markdown';
+
 import Box from '@mui/material/Box';
 import Paper from '@mui/material/Paper';
 import Stack from '@mui/material/Stack';
 import Button from '@mui/material/Button';
 import Container from '@mui/material/Container';
-import Typography from '@mui/material/Typography';
 import TextField from '@mui/material/TextField';
-import CircularProgress from '@mui/material/CircularProgress';
-import ReactMarkdown from 'react-markdown';
-import remarkGfm from 'remark-gfm';
 import { useTheme } from '@mui/material/styles';
+import Typography from '@mui/material/Typography';
+import CircularProgress from '@mui/material/CircularProgress';
 
 import { varFade, MotionViewport } from 'src/components/animate';
-import { m } from 'framer-motion';
 
 function AnimatedDiv({ children }: { children: React.ReactNode }) {
   const variants = varFade({ distance: 24 }).inUp;
@@ -36,7 +37,7 @@ export function HomeGPTAssistant() {
       const eventSource = new EventSource(`/api/chat?userInput=${encodeURIComponent(userInput)}`);
 
       eventSource.onmessage = (event) => {
-        const data = event.data;
+        const {data} = event;
         console.log('Received data:', data);
 
         if (data === '[END]') {

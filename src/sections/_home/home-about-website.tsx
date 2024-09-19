@@ -1,25 +1,11 @@
-import type { BoxProps } from '@mui/material/Box';
-import type { Theme, SxProps } from '@mui/material/styles';
-
 import { m } from 'framer-motion';
 
 import Box from '@mui/material/Box';
-import Paper from '@mui/material/Paper';
-import Stack from '@mui/material/Stack';
-import Button from '@mui/material/Button';
-import Divider from '@mui/material/Divider';
+import Link from '@mui/material/Link';
 import Container from '@mui/material/Container';
 import { useTheme } from '@mui/material/styles';
 import Typography from '@mui/material/Typography';
-import Link from '@mui/material/Link';
 
-import { paths } from 'src/routes/paths';
-
-import { CONFIG } from 'src/config-global';
-import { varAlpha, stylesMode } from 'src/theme/styles';
-
-import { Label } from 'src/components/label';
-import { Iconify } from 'src/components/iconify';
 import { varFade, MotionViewport } from 'src/components/animate';
 
 // ----------------------------------------------------------------------
@@ -74,7 +60,7 @@ export function HomeAboutWebsite() {
               >
                 Zone UI Kit
               </Link>{' '}
-              source code. I'm currently working on building out a blog page.
+              source code. I&apos;m currently working on building out a blog page.
             </Typography>
           </AnimatedDiv>
         </Box>
