@@ -1,36 +1,10 @@
 import { CONFIG } from 'src/config-global';
-
-const content = `
-<p>Pellentesque posuere. Phasellus a est. Suspendisse pulvinar, augue ac venenatis condimentum, sem libero volutpat nibh, nec pellentesque velit pede quis nunc.</p>
-
-<p>Pellentesque posuere. Phasellus a est. Suspendisse pulvinar, augue ac venenatis condimentum, sem libero volutpat nibh, nec pellentesque velit pede quis nunc. Phasellus viverra nulla ut metus varius laoreet. Praesent egestas tristique nibh. Donec posuere vulputate arcu. Quisque rutrum.</p>
-
-<p>Donec posuere vulputate arcu. Quisque rutrum. Curabitur vestibulum aliquam leo. Nam commodo suscipit quam. Vestibulum ullamcorper mauris at ligula.</p>
-
-<p>Pellentesque posuere. Phasellus a est. Suspendisse pulvinar, augue ac venenatis condimentum, sem libero volutpat nibh, nec pellentesque velit pede quis nunc. Phasellus viverra nulla ut metus varius laoreet. Praesent egestas tristique nibh.</p>
-
-
-<h4>Curabitur suscipit suscipit tellus</h4>
-
-<p>Donec posuere vulputate arcu. Quisque rutrum. Curabitur vestibulum aliquam leo. Nam commodo suscipit quam. Vestibulum ullamcorper mauris at ligula.</p>
-
-<h4>Nullam accumsan lorem in</h4>
-
-<p>Donec posuere vulputate arcu. Quisque rutrum. Curabitur vestibulum aliquam leo. Nam commodo suscipit quam. Vestibulum ullamcorper mauris at ligula.</p>
-
-<p>Donec posuere vulputate arcu. Quisque rutrum. Curabitur vestibulum aliquam leo.</p>
-
-<p>Donec posuere vulputate arcu. Quisque rutrum. Curabitur vestibulum aliquam leo. Nam commodo suscipit quam. Vestibulum ullamcorper mauris at ligula.</p>
-
-<p>Pellentesque posuere. Phasellus a est. Suspendisse pulvinar, augue ac venenatis condimentum, sem libero volutpat nibh, nec pellentesque velit pede quis nunc. Phasellus viverra nulla ut metus varius laoreet. Praesent egestas tristique nibh.</p>
-
-<p>Donec posuere vulputate arcu. Quisque rutrum. Curabitur vestibulum aliquam leo. Nam commodo suscipit quam. Vestibulum ullamcorper mauris at ligula.</p>
-`;
+import { content as vrpdContent } from './content/vrpd';
 
 export const projectData = [
   {
     id: '1',
-    category: '',
+    key: 'vrpd',
     duration: '6 min read',
     title: 'Vehicle Routing Problem with Drones',
     favorited: false,
@@ -40,7 +14,7 @@ export const projectData = [
     createdAt: '2024-04-22T11:00:00.000Z',
     coverUrl: '/assets/projects/1/project-home.webp',
     heroUrl: 'assets/images/career/career-1.webp',
-    content,
+    content: '',
     github: 'https://github.com/mchales/vrpd-amazon-dataset',
     youtube: 'https://youtu.be/bUmFSrAQWBc',
     team: '4',
@@ -55,7 +29,7 @@ export const projectData = [
   },
   {
     id: '2',
-    category: 'Marketing',
+    key: 'dfg',
     duration: '8 min read',
     title: 'The Future of Marketing Strategy 2',
     favorited: true,
@@ -65,7 +39,7 @@ export const projectData = [
     createdAt: '2024-08-12T16:00:00.000Z',
     coverUrl: '',
     heroUrl: 'assets/images/career/career-1.webp',
-    content,
+    content: vrpdContent,
     github: 'sdf',
     youtube: '',
     team: 'sdf',
@@ -80,7 +54,7 @@ export const projectData = [
   },
   {
     id: '3',
-    category: 'Marketing',
+    key: 'sdf',
     duration: '8 min read',
     title: 'The Future of Marketing Strategy 3',
     favorited: false,
@@ -90,7 +64,7 @@ export const projectData = [
     createdAt: '2024-08-12T16:00:00.000Z',
     coverUrl: '/assets/images/travel/travel-large-2.webp',
     heroUrl: 'assets/images/career/career-1.webp',
-    content,
+    content: vrpdContent,
     github: 'dsf',
     youtube: '',
     team: 'sdf',

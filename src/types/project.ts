@@ -11,11 +11,11 @@ export type IProjectCategoryProps = {
 
 export type IProjectProps = {
   id: string;
+  key: string;
   title: string;
   heroUrl: string;
   tags: string[];
   content: string;
-  category: string;
   coverUrl: string;
   duration: string;
   favorited: boolean;

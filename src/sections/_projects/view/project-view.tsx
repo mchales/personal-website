@@ -1,7 +1,11 @@
 'use client';
 
+import React, { useState, useEffect } from 'react';
+
 import type { BoxProps } from '@mui/material/Box';
 import type { IProjectProps } from 'src/types/project';
+import remarkGfm from 'remark-gfm';
+import ReactMarkdown from 'react-markdown';
 
 import Box from '@mui/material/Box';
 import Stack from '@mui/material/Stack';
@@ -10,6 +14,7 @@ import Divider from '@mui/material/Divider';
 import Grid from '@mui/material/Unstable_Grid2';
 import Container from '@mui/material/Container';
 import Typography from '@mui/material/Typography';
+import CircularProgress from '@mui/material/CircularProgress';
 
 import { fDate } from 'src/utils/format-time';
 
@@ -25,7 +30,28 @@ type ProjectProps = BoxProps & {
   project: IProjectProps;
 };
 
+const loadMarkdownFile = async (key: string) => {
+  try {
+    const filePath = `/projects/${key}/${key}.md`;
+    const response = await fetch(filePath);
+    if (!response.ok) throw new Error('File not found');
+    const text = await response.text();
+    return text;
+  } catch (error) {
+    console.error('Error loading markdown file:', error);
+    return null;
+  }
+};
+
 export function ProjectView({ project }: ProjectProps) {
+  const [mdContent, setMdContent] = useState<string | null>(null);
+
+  useEffect(() => {
+    if (!project.content) {
+      loadMarkdownFile(project.key).then((content) => setMdContent(content));
+    }
+  }, [project.content]);
+
   return (
     <>
       <Divider />
@@ -84,7 +110,15 @@ export function ProjectView({ project }: ProjectProps) {
             </Typography>
             <Divider />
 
-            <Markdown content={project.content} />
+            {project.content ? (
+              <Markdown content={project.content} />
+            ) : mdContent ? (
+              <ReactMarkdown remarkPlugins={[remarkGfm]}>{mdContent}</ReactMarkdown>
+            ) : (
+              <Container sx={{ alignContent: 'center', pt: 4 }}>
+                <CircularProgress />
+              </Container>
+            )}
 
             <Divider sx={{ mt: 10 }} />
           </Grid>

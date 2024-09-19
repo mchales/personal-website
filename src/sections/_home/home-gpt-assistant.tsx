@@ -37,7 +37,7 @@ export function HomeGPTAssistant() {
       const eventSource = new EventSource(`/api/chat?userInput=${encodeURIComponent(userInput)}`);
 
       eventSource.onmessage = (event) => {
-        const {data} = event;
+        const { data } = event;
         console.log('Received data:', data);
 
         if (data === '[END]') {
