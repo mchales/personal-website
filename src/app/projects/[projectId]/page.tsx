@@ -2,6 +2,12 @@ import { projectData } from 'src/data/projects/_projects';
 
 import { ProjectView } from 'src/sections/_projects/view/project-view';
 
+export const metadata = {
+  title: 'Project',
+  description: 'Project Sean McHale has worked on',
+  keywords: 'projects, development, coding',
+};
+
 export default function Page({ params }: { params: { projectId: string } }) {
   const selectedProject = projectData.find((project) => project.id === params.projectId);
 

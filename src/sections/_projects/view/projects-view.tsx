@@ -13,9 +13,16 @@ import { ProjectsTitle } from '../projects-title';
 import { ProjectsSidebar } from '../projects-sidebar';
 import { ProjectsSearchMobile } from '../projects-search-mobile';
 
-const sortedProjects = projectData.sort(
-  (a, b) => new Date(b.createdAt).getTime() - new Date(a.createdAt).getTime()
-);
+const sortedProjects = projectData.sort((a, b) => {
+  const dateA = new Date(a.createdAt).getTime();
+  const dateB = new Date(b.createdAt).getTime();
+
+  // If b.createdAt is empty, sort it first
+  if (!b.createdAt) return 1;
+  if (!a.createdAt) return -1;
+
+  return dateB - dateA;
+});
 
 export function ProjectsView() {
   const [selectedTags, setSelectedTags] = useState<string[]>([]);

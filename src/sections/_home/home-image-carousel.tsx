@@ -1,7 +1,7 @@
 import { useEffect } from 'react';
-import image1 from 'public/assets/images/home/home-pic-1.png';
-import image2 from 'public/assets/images/home/home-pic-2.jpg';
-import image3 from 'public/assets/images/home/home-pic-3.jpg';
+import image1 from 'public/assets/images/home/home-pic-1.webp';
+import image2 from 'public/assets/images/home/home-pic-2.webp';
+import image3 from 'public/assets/images/home/home-pic-3.webp';
 
 import Box from '@mui/material/Box';
 import Tooltip from '@mui/material/Tooltip';
