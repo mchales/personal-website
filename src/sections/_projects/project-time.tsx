@@ -22,7 +22,7 @@ export function ProjectTime({ createdAt, duration, sx, ...other }: PostTimeProps
       {...other}
     >
       <Typography variant="caption" sx={{ color: 'grey.700' }}>
-        {createdAt}
+        {createdAt || 'Active Development'}
         {' • '}
         {duration}
       </Typography>
