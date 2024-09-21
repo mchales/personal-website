@@ -31,33 +31,22 @@ export async function GET(request: Request) {
         });
 
         let buffer = '';
-        let isInCodeBlock = false;
 
         runStream
           .on('textDelta', (textDelta) => {
             buffer += textDelta.value;
 
-            // Have to process the buffer like this because markdown was not rendering otherwise
-            while (buffer.includes('\n') || buffer.length > 10) {
-              let index = buffer.indexOf('\n');
-              if (index === -1) index = 10;
+            const index = buffer.length;
 
-              let chunk = buffer.slice(0, index + 1);
-              buffer = buffer.slice(index + 1);
+            let chunk = buffer.slice(0, index);
+            buffer = buffer.slice(index);
 
-              // Handle code blocks
-              if (chunk.includes('```')) {
-                isInCodeBlock = !isInCodeBlock;
-                chunk = chunk.replace('```', '\\```');
-              }
+            // Ensure proper newline encoding
+            chunk = chunk.replace(/\n/g, '\\n');
 
-              // Ensure proper newline encoding
-              chunk = chunk.replace(/\n/g, '\\n');
-
-              // Send the data in SSE format
-              const sseFormattedData = `data: ${chunk}\n\n`;
-              controller.enqueue(encoder.encode(sseFormattedData));
-            }
+            // Send the data in SSE format
+            const sseFormattedData = `data: ${chunk}\n\n`;
+            controller.enqueue(encoder.encode(sseFormattedData));
           })
           .on('error', (error) => {
             console.error('An error occurred during streaming:', error);

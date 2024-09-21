@@ -1,5 +1,3 @@
 export const description = `
-In 2023, many LLMs had small context window making directly summarizing large texts like a book impossible.
-This is not that big of a problem today, but for some smaller models this still holds true. 
-This project focuses on developing an LLM-based smart summarization techniques to efficiently summarize large documents that surpass typical context limits.
+In 2023, many large language models (LLMs) had limited context windows, which made it difficult to directly summarize lengthy texts, such as books. While this issue has been largely addressed in more recent models, it still persists in some smaller ones. This project aims to develop smart summarization techniques using LLMs to efficiently summarize large documents.
 `;

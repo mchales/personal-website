@@ -36,8 +36,8 @@ export const projectData = [
     },
   },
   {
-    id: 'personal-wesbite',
-    duration: '4 min read',
+    id: 'personal-website',
+    duration: '2 min read',
     title: 'Personal Website',
     description: personalWebsiteDescription,
     status: 'Ongoing',
@@ -45,7 +45,7 @@ export const projectData = [
     tags: [TAGS.TAG_REACT, TAGS.TAG_NEXT_JS, TAGS.TAG_TYPESCRIPT, TAGS.TAG_OPENAI_API],
     createdAt: '',
     coverUrl: '',
-    content: 'To be added...',
+    content: '',
     github: 'https://github.com/mchales/personal-website',
     youtube: '',
 

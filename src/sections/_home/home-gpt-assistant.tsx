@@ -38,7 +38,6 @@ export function HomeGPTAssistant() {
 
       eventSource.onmessage = (event) => {
         const { data } = event;
-        console.log('Received data:', data);
 
         if (data === '[END]') {
           eventSource.close();
