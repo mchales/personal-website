@@ -112,13 +112,13 @@ export function HomeMyExperience() {
                   >
                     Tacit
                   </Link>
-                  , an AI startup, I led the development of an MVP for a qualitative data collection
-                  platform. This platform facilitated one-on-one, scalable conversations between
-                  participants and an AI assistant. Think of a survey, but instead of simple
-                  responses, participants engage in conversations with an AI assistant where deeper
-                  insights and details are shared. Key ideas are tracked and reintroduced to other
-                  users for validation. All conversation and idea data is processed and displayed
-                  for easy exploration.
+                  , an Vanderbilt alumni AI startup, I led the development of an MVP for a
+                  qualitative data collection platform. This platform facilitated one-on-one,
+                  scalable conversations between participants and an AI assistant. Think of a
+                  survey, but instead of simple responses, participants engage in conversations with
+                  an AI assistant where deeper insights and details are shared. Key ideas are
+                  tracked and reintroduced to other users for validation. All conversation and idea
+                  data is processed and displayed for easy exploration.
                 </Typography>
               </m.div>
               <m.div variants={varFade().inUp}>

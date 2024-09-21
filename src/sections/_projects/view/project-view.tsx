@@ -14,7 +14,12 @@ import Divider from '@mui/material/Divider';
 import Grid from '@mui/material/Unstable_Grid2';
 import Container from '@mui/material/Container';
 import Typography from '@mui/material/Typography';
-import CircularProgress from '@mui/material/CircularProgress';
+import IconButton from '@mui/material/IconButton';
+import CircularProgress from '@mui/material/CircularProgress'; // Import IconButton
+import ArrowBackIcon from '@mui/icons-material/ArrowBack';
+
+import { paths } from 'src/routes/paths';
+import { useRouter } from 'src/routes/hooks';
 
 import { fDate } from 'src/utils/format-time';
 
@@ -45,6 +50,7 @@ const loadMarkdownFile = async (id: string) => {
 
 export function ProjectView({ project }: ProjectProps) {
   const [mdContent, setMdContent] = useState<string | null>(null);
+  const router = useRouter();
 
   useEffect(() => {
     if (!project.content) {
@@ -57,6 +63,9 @@ export function ProjectView({ project }: ProjectProps) {
       <Divider />
 
       <Container sx={{ overflow: 'hidden' }}>
+        <IconButton onClick={() => router.push(paths.projects)} aria-label="back" sx={{ mt: 2 }}>
+          <ArrowBackIcon />
+        </IconButton>
         <Grid container spacing={3} justifyContent={{ md: 'center' }}>
           <Grid xs={12} md={8}>
             <Typography variant="h2" component="h1" sx={{ pt: 2 }}>
