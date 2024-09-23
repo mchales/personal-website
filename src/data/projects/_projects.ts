@@ -107,7 +107,6 @@ export const projectData = [
       TAGS.TAG_POSTGRESQL,
       TAGS.TAG_HEROKU,
       TAGS.TAG_AMAZON_RDS,
-      TAGS.TAG_AMAZON_S3,
       TAGS.TAG_REDIS,
       TAGS.TAG_CELERY,
       TAGS.TAG_RESTFUL_API,
@@ -118,7 +117,7 @@ export const projectData = [
     ],
     createdAt: '2024-08-23T11:00:00.000Z',
     coverUrl: '/projects/tacit/tacit.webp',
-    content: 'To be added...',
+    content: '',
     github: '',
     youtube: '',
 
@@ -229,7 +228,7 @@ export const projectData = [
     ],
     createdAt: '',
     coverUrl: '/projects/chinese-conversation-llm/prototype.webp',
-    content: 'To be added...',
+    content: '',
     github: '',
     youtube: '',
 
@@ -241,8 +240,8 @@ export const projectData = [
 
   {
     id: 'prompt-competition',
-    duration: '3 min read',
-    title: 'Prompt Engineering Comptetition Web App',
+    duration: '1 min read',
+    title: 'Prompt Engineering Competition Web App',
     description: promptCompetitionDescription,
     status: 'Ongoing',
     team: '1',
@@ -258,7 +257,7 @@ export const projectData = [
     ],
     createdAt: '',
     coverUrl: '',
-    content: 'To be added...',
+    content: '',
     github: '',
     youtube: '',
 
@@ -296,7 +295,7 @@ export const projectData = [
     tags: [TAGS.TAG_PYTHON, TAGS.TAG_DJANGO, TAGS.TAG_RESTFUL_API],
     createdAt: '2024-08-20T11:00:00.000Z',
     coverUrl: '',
-    content: 'To be added...',
+    content: '',
     github: 'https://github.com/mchales/django-auth-starter',
     youtube: '',
 

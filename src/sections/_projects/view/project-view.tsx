@@ -50,6 +50,7 @@ const loadMarkdownFile = async (id: string) => {
 
 export function ProjectView({ project }: ProjectProps) {
   const [mdContent, setMdContent] = useState<string | null>(null);
+
   const router = useRouter();
 
   useEffect(() => {
