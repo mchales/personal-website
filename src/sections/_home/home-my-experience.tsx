@@ -112,7 +112,7 @@ export function HomeMyExperience() {
                   >
                     Tacit
                   </Link>
-                  , an Vanderbilt alumni AI startup, I led the development of an MVP for a
+                  , a Vanderbilt student-based AI startup, I led the development of an MVP for a
                   qualitative data collection platform. This platform facilitated one-on-one,
                   scalable conversations between participants and an AI assistant. Think of a
                   survey, but instead of simple responses, participants engage in conversations with
