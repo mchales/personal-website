@@ -4,6 +4,8 @@ import OpenAI from 'openai';
 import { NextResponse } from 'next/server';
 import { headers } from 'next/headers';
 
+export const maxDuration = 60;
+
 async function sendErrorToServerlessFunction(request: Request, message: string, error: any) {
   try {
     const headersList = headers();
