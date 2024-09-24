@@ -147,9 +147,9 @@ Every conversation a participant has with Tacit AI generates a summary and ideas
 
 Idea 1 and 3 should be classified as the same, while idea 1 and 2 should be classified as different. There’s many ways to approach this problem, clustering algorithms, sentence transformers, or vector embeddings.
 
-We choose the latter as we were already using a vector database for retrieval augmented generation (RAG) for the question and answer. Vector databases are very neat, they are trained to transform a data point (sentence, image, etc) into a vector, and the vector space will preserve the initially similarity. So ideally, two sentences that are semantically similar (have the same meaning) will also be close to each other in a vector space.
+We choose the latter as we were already using a vector database for retrieval augmented generation (RAG) for the question and answer. Vector databases are very neat, they are trained to transform a data point (sentence, image, etc) into a vector, and the vector space will preserve the initial similarity. So ideally, two sentences that are semantically similar (have the same meaning) will also be close to each other in a vector space.
 
-I say ideally, because this is not always the case. We ran into the problem of two opposite ideas, such as idea 1 and idea 2, having extremely high similarity scores when they are clearly opposite ideas. To solve this issue, we took a brute-force by effective approach of throwing a LLM query at the problem.
+I say ideally, because this is not always the case. We ran into the problem of two opposite ideas, such as idea 1 and idea 2, having extremely high similarity scores. To solve this issue, we took a brute-force by effective approach of throwing a LLM query at the problem.
 
 Given one idea, we query our vector space for the 10 most similar ideas, and then we query GPT-4 to rate each idea on having the same meaning to the original idea. Using this score we determine if we have a duplicate.
 
@@ -158,16 +158,19 @@ So for for example:
 New Idea: Dogs are man's best friend
 
 Vector Database:
-	- Dogs are not man's best friend
-	- Dogs are humanity's most loyal and trusted companions
+- Dogs are not man's best friend
+- Dogs are humanity's most loyal and trusted companions
 
 1. Vector database query: Dogs are man's best friend
 	1. Dogs are not man's best friend. Similarity: 0.92
 	2. Dogs are humanity's most loyal and trusted companions. Similarity: 0.78
-	With more ideas, only the top 10 similar  ideas will continue to the next step
+
+With more ideas, only the top 10 similar  ideas will continue to the next step
+
 2. ChatGPT API query: “Score each idea 1-10 based on how similar it is to original idea”
 	1. Dogs are not man's best friend. Score: 2
 	2. Dogs are humanity's most loyal and trusted companions. Similarity: 9
+
 3. Similar idea(s) selected based on score threshold
 	1. Similar Idea: Dogs are humanity's most loyal and trusted companions.
 
@@ -178,10 +181,15 @@ Each idea receives a score based on the average rating from participants. Howeve
 For instance, let’s say we have a conversation with 10 participants. Each participant conversation creates 5 ideas. We want each idea to have at least 4 ratings. That means each participant needs to rate 20 ideas.
 
 We solved this problem through two methods:
-1. Categories
-	Tacit Analysis creates categories and classifies ideas into categories. Participants rate categories, and by doing so all the ideas all receive that rating. While this approach is broader and can sometimes lead to inaccuracies, it generally performs well. The final rankings are further refined when participants rank individual ideas in a list.
-1. Ranking as list
-	Originally ideas were shown individually to the user and then ranked. Users could also provide feedback on each idea. This process was slow and we changed the mechanism to be list ranking where participants could move ideas up or down
+1. **Categories**
+	
+Tacit Analysis creates categories and classifies ideas into categories. Participants rate categories, and by doing so all the ideas all receive that rating. While this approach is broader and can sometimes lead to inaccuracies, it generally performs well. The final rankings are further refined when participants rank individual ideas in a list.
+
+
+2. **Ranking as list**
+
+Originally ideas were shown individually to the user and then ranked. Users could also provide feedback on each idea. This process was slow and we changed the mechanism to be list ranking where participants could move ideas up or down
+
 ![[idea-ranking.jpg]]
 
 # Challenges
