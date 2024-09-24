@@ -1,11 +1,38 @@
+// File: /app/api/your-function/route.ts
+
 import OpenAI from 'openai';
+import { NextResponse } from 'next/server';
+import { headers } from 'next/headers';
+
+async function sendErrorToServerlessFunction(request: Request, message: string, error: any) {
+  try {
+    const headersList = headers();
+    const protocol = headersList.get('x-forwarded-proto') || 'http';
+    const host = headersList.get('host');
+    const baseUrl = `${protocol}://${host}`;
+
+    await fetch(`${baseUrl}/api/error-handler`, {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify({
+        message,
+        error: error.toString(),
+      }),
+    });
+  } catch (fetchError) {
+    // Optionally handle errors from the error handler itself
+    console.error('Failed to send error to error handler:', fetchError);
+  }
+}
 
 export async function GET(request: Request) {
   const { searchParams } = new URL(request.url);
   const userInput = searchParams.get('userInput');
 
   if (!userInput) {
-    return new Response('Missing user input', { status: 400 });
+    return new NextResponse('Missing user input', { status: 400 });
   }
 
   const openai = new OpenAI({
@@ -22,7 +49,7 @@ export async function GET(request: Request) {
       try {
         thread = await openai.beta.threads.create();
       } catch (error) {
-        console.error('Error creating thread:', error);
+        await sendErrorToServerlessFunction(request, 'Error creating thread', error);
         controller.enqueue(encoder.encode(`data: Error creating thread. Please try again.\n\n`));
         controller.error(error);
         return;
@@ -34,7 +61,7 @@ export async function GET(request: Request) {
           content: userInput,
         });
       } catch (error) {
-        console.error('Error creating message:', error);
+        await sendErrorToServerlessFunction(request, 'Error creating message', error);
         controller.enqueue(encoder.encode(`data: Error creating message. Please try again.\n\n`));
         controller.error(error);
         return;
@@ -46,7 +73,7 @@ export async function GET(request: Request) {
           assistant_id,
         });
       } catch (error) {
-        console.error('Error starting run stream:', error);
+        await sendErrorToServerlessFunction(request, 'Error starting run stream', error);
         controller.enqueue(encoder.encode(`data: Error starting stream. Please try again.\n\n`));
         controller.error(error);
         return;
@@ -55,7 +82,7 @@ export async function GET(request: Request) {
       let buffer = '';
 
       runStream
-        .on('textDelta', (textDelta) => {
+        .on('textDelta', async (textDelta) => {
           try {
             buffer += textDelta.value;
 
@@ -71,15 +98,15 @@ export async function GET(request: Request) {
             const sseFormattedData = `data: ${chunk}\n\n`;
             controller.enqueue(encoder.encode(sseFormattedData));
           } catch (error) {
-            console.error('Error processing text delta:', error);
+            await sendErrorToServerlessFunction(request, 'Error processing text delta', error);
             controller.enqueue(
               encoder.encode(`data: Error processing data. Please try again.\n\n`)
             );
             controller.error(error);
           }
         })
-        .on('error', (error) => {
-          console.error('An error occurred during streaming:', error);
+        .on('error', async (error) => {
+          await sendErrorToServerlessFunction(request, 'An error occurred during streaming', error);
           const errorMessage = 'Sorry, an error occurred during streaming. Please try again.';
           const sseErrorData = `data: ${errorMessage}\n\n`;
           controller.enqueue(encoder.encode(sseErrorData));
@@ -98,7 +125,7 @@ export async function GET(request: Request) {
     },
   });
 
-  return new Response(stream, {
+  return new NextResponse(stream, {
     headers: {
       'Content-Type': 'text/event-stream',
       'Cache-Control': 'no-cache, no-transform',
