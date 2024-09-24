@@ -127,7 +127,9 @@ export function ProjectView({ project }: ProjectProps) {
             {project.content ? (
               <Markdown content={project.content} />
             ) : mdContent ? (
-              <ReactMarkdown remarkPlugins={[remarkGfm]}>{mdContent}</ReactMarkdown>
+              <div className="mardown">
+                <ReactMarkdown remarkPlugins={[remarkGfm]}>{mdContent}</ReactMarkdown>
+              </div>
             ) : (
               <Container sx={{ alignContent: 'center', pt: 4 }}>
                 <CircularProgress />
