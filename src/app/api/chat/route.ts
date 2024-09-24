@@ -1,11 +1,40 @@
+// File: /app/api/your-function/route.ts
+
 import OpenAI from 'openai';
+import { NextResponse } from 'next/server';
+import { headers } from 'next/headers';
+
+export const maxDuration = 60;
+
+async function sendErrorToServerlessFunction(request: Request, message: string, error: any) {
+  try {
+    const headersList = headers();
+    const protocol = headersList.get('x-forwarded-proto') || 'http';
+    const host = headersList.get('host');
+    const baseUrl = `${protocol}://${host}`;
+
+    await fetch(`${baseUrl}/api/error-handler`, {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify({
+        message,
+        error: error.toString(),
+      }),
+    });
+  } catch (fetchError) {
+    // Optionally handle errors from the error handler itself
+    console.error('Failed to send error to error handler:', fetchError);
+  }
+}
 
 export async function GET(request: Request) {
   const { searchParams } = new URL(request.url);
   const userInput = searchParams.get('userInput');
 
   if (!userInput) {
-    return new Response('Missing user input', { status: 400 });
+    return new NextResponse('Missing user input', { status: 400 });
   }
 
   const openai = new OpenAI({
@@ -16,24 +45,47 @@ export async function GET(request: Request) {
 
   const stream = new ReadableStream({
     async start(controller) {
+      const assistant_id = process.env.OPENAI_ASSISTANT_ID as string;
+
+      let thread;
       try {
-        const assistant_id = process.env.OPENAI_ASSISTANT_ID as string;
+        thread = await openai.beta.threads.create();
+      } catch (error) {
+        await sendErrorToServerlessFunction(request, 'Error creating thread', error);
+        controller.enqueue(encoder.encode(`data: Error creating thread. Please try again.\n\n`));
+        controller.error(error);
+        return;
+      }
 
-        const thread = await openai.beta.threads.create();
-
+      try {
         await openai.beta.threads.messages.create(thread.id, {
           role: 'user',
           content: userInput,
         });
+      } catch (error) {
+        await sendErrorToServerlessFunction(request, 'Error creating message', error);
+        controller.enqueue(encoder.encode(`data: Error creating message. Please try again.\n\n`));
+        controller.error(error);
+        return;
+      }
 
-        const runStream = openai.beta.threads.runs.stream(thread.id, {
+      let runStream;
+      try {
+        runStream = openai.beta.threads.runs.stream(thread.id, {
           assistant_id,
         });
+      } catch (error) {
+        await sendErrorToServerlessFunction(request, 'Error starting run stream', error);
+        controller.enqueue(encoder.encode(`data: Error starting stream. Please try again.\n\n`));
+        controller.error(error);
+        return;
+      }
 
-        let buffer = '';
+      let buffer = '';
 
-        runStream
-          .on('textDelta', (textDelta) => {
+      runStream
+        .on('textDelta', async (textDelta) => {
+          try {
             buffer += textDelta.value;
 
             const index = buffer.length;
@@ -47,37 +99,35 @@ export async function GET(request: Request) {
             // Send the data in SSE format
             const sseFormattedData = `data: ${chunk}\n\n`;
             controller.enqueue(encoder.encode(sseFormattedData));
-          })
-          .on('error', (error) => {
-            console.error('An error occurred during streaming:', error);
-            // Send custom error message in SSE format
-            const errorMessage = 'Sorry, an error occurred. Please try again.';
-            const sseErrorData = `data: ${errorMessage}\n\n`;
-            controller.enqueue(encoder.encode(sseErrorData));
-            controller.close();
-          })
-          .on('end', () => {
-            // Send any remaining buffer
-            if (buffer.length > 0) {
-              const sseFormattedData = `data: ${buffer.replace(/\n/g, '\\n')}\n\n`;
-              controller.enqueue(encoder.encode(sseFormattedData));
-            }
-            const endMessage = `data: [END]\n\n`;
-            controller.enqueue(encoder.encode(endMessage));
-            controller.close();
-          });
-      } catch (error) {
-        console.error('An error occurred:', error);
-        // Send custom error message in SSE format
-        const errorMessage = 'Sorry, an error occurred. Please try again.';
-        const sseErrorData = `data: ${errorMessage}\n\n`;
-        controller.enqueue(encoder.encode(sseErrorData));
-        controller.close();
-      }
+          } catch (error) {
+            await sendErrorToServerlessFunction(request, 'Error processing text delta', error);
+            controller.enqueue(
+              encoder.encode(`data: Error processing data. Please try again.\n\n`)
+            );
+            controller.error(error);
+          }
+        })
+        .on('error', async (error) => {
+          await sendErrorToServerlessFunction(request, 'An error occurred during streaming', error);
+          const errorMessage = 'Sorry, an error occurred during streaming. Please try again.';
+          const sseErrorData = `data: ${errorMessage}\n\n`;
+          controller.enqueue(encoder.encode(sseErrorData));
+          controller.error(error);
+        })
+        .on('end', () => {
+          // Send any remaining buffer
+          if (buffer.length > 0) {
+            const sseFormattedData = `data: ${buffer.replace(/\n/g, '\\n')}\n\n`;
+            controller.enqueue(encoder.encode(sseFormattedData));
+          }
+          const endMessage = `data: [END]\n\n`;
+          controller.enqueue(encoder.encode(endMessage));
+          controller.close();
+        });
     },
   });
 
-  return new Response(stream, {
+  return new NextResponse(stream, {
     headers: {
       'Content-Type': 'text/event-stream',
       'Cache-Control': 'no-cache, no-transform',
