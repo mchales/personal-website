@@ -4,8 +4,8 @@ import * as TAGS from './assets';
 import { description as vrpdDescription } from './content/vrpd';
 import { description as tacitDescription } from './content/tacit';
 import { description as llmSummaryDescription } from './content/llm-summary';
-import { description as llmCodingEvalDescription } from './content/llm-coding-eval';
-import { description as personalWebsiteDescription } from './content/personal-website'; // This will automatically import all constants from the index file
+import { description as personalWebsiteDescription } from './content/personal-website';
+import { content as llmCodingEvalContent , description as llmCodingEvalDescription } from './content/llm-coding-eval'; // This will automatically import all constants from the index file
 import { description as llmNerDescription } from './content/llm-ner';
 import { description as hideDappDescription } from './content/hide-dapp';
 import { description as lechatNoirDescription } from './content/lechat-noir';
@@ -26,7 +26,7 @@ export const projectData = [
     tags: [TAGS.TAG_PYTHON, TAGS.TAG_BIG_DATA, TAGS.TAG_PANDAS, TAGS.TAG_PLOTLY],
     createdAt: '2024-04-22T11:00:00.000Z',
     coverUrl: '/projects/vrpd/project-home.webp',
-    content: '',
+    content: 'To be added...',
     github: 'https://github.com/mchales/vrpd-amazon-dataset',
     youtube: 'https://youtu.be/bUmFSrAQWBc',
 
@@ -65,7 +65,7 @@ export const projectData = [
     createdAt: '2024-04-24T11:00:00.000Z',
     // coverUrl: '/projects/llm-coding-eval/pass20.webp',
     coverUrl: '',
-    content: 'To be added...',
+    content: llmCodingEvalContent,
     github: 'https://github.com/mchales/llm-coding-eval',
     youtube: '',
 
@@ -76,7 +76,7 @@ export const projectData = [
   },
   {
     id: 'llm-summary',
-    duration: '5 min read',
+    duration: '4 min read',
     title: 'LLM Smart Summarization',
     description: llmSummaryDescription,
     status: 'Complete',
@@ -84,7 +84,7 @@ export const projectData = [
     tags: [TAGS.TAG_PYTHON, TAGS.TAG_LANGCHAIN, TAGS.TAG_OPENAI_API],
     createdAt: '2023-11-30T11:00:00.000Z',
     coverUrl: '/projects/llm-summary/map-reduce.webp',
-    content: 'To be added...',
+    content: '',
     github: 'https://github.com/aahn33/llm-summary',
     youtube: '',
 
