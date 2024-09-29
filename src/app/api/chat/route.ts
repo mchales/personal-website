@@ -1,8 +1,8 @@
 // File: /app/api/your-function/route.ts
 
 import OpenAI from 'openai';
-import { NextResponse } from 'next/server';
 import { headers } from 'next/headers';
+import { NextResponse } from 'next/server';
 
 export const maxDuration = 60;
 

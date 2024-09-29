@@ -42,9 +42,9 @@ export function HomeAboutWebsite() {
 
           <AnimatedDiv>
             <Typography>
-              This website is built using React, Next.js, and TypeScript using the{' '}
+              This website is built using React, Next.js, and TypeScript. Check out my{' '}
               <Link
-                href="https://mui.com/store/items/zone-landing-page/"
+                href="/projects/personal-website/"
                 target="_blank"
                 rel="noopener noreferrer"
                 sx={{
@@ -58,9 +58,10 @@ export function HomeAboutWebsite() {
                   },
                 }}
               >
-                Zone UI Kit
+                project post
               </Link>{' '}
-              source code. I&apos;m currently working on building out a blog page.
+              to learn more about this website and to see the source code. I&apos;m currently
+              working on finishing project pages and building out a blog page.
             </Typography>
           </AnimatedDiv>
         </Box>

@@ -2,15 +2,16 @@ For many language learners, mastering speaking and listening skills presents sig
 
 ## Existing Options and Their Limitations
 
-Many learners turn to translation tools or language platforms like **Duolingo Max**. However, these solutions come with their limitations:
+Many learners turn to translation tools or language platforms like **Duolingo**. However, these solutions come with their limitations:
 
-2. **Duolingo Max** offers a structured learning experience, but its subscription fee ($168 annually or $30 per month) makes it costly for many learners.
+1. **Duolingo Max** offers a structured learning experience with conversation practice. However, this conversation practice is not available for Chinese. Additionally, Duolingo takes a cookie-cutter approach to languages, not offering unique and personalized experiences for languages.
+2. **LangoTalk** allows users to have conversations with AI tutors in a target language. They also allow users to create custom prompts. However, natively there are no culturally specific elements and the app does not incorporate additional media.
 
-There remains a gap for a solution that provides practical, real-time conversation practice in authentic scenarios at a more accessible price.
+There remains a gap for a solution that provides practical, real-time conversation practice in authentic scenarios.
 
 ## The Solution: A Conversation-Based Learning Web App
 
-A conversation-based language learning web app addresses this gap by enabling users to engage in practical conversations powered by **ChatGPT** and the **Whisper API**. The web app focuses on real-life situations where users can practice speaking and listening skills in a conversational context.
+A conversation-based language learning web app addresses this gap by enabling users to engage in practical conversations powered by **ChatGPT** and the **Whisper API**. There will be a strong emphasis on practical situations, role-playing, and cultural elements. Additionally, there will be a high level of personalization through using user-submitted information and custom prompting. I additionally plan to have three different levels of language practice, each with a storyline. This storyline will contain practical situations, cultural elements, and media to keep the user highly motivated.
 
 ### How the Application Works:
 
@@ -44,7 +45,3 @@ This web app is ideal for a variety of users:
 - **Students** who want to improve their spoken Chinese.
 - **Individuals living in China or English-speaking countries**, looking to develop conversation skills for practical situations.
 - **Language enthusiasts** seeking a convenient way to practice and improve oral communication.
-
----
-
-The web app's focus on practical scenarios, flexible difficulty levels, and token-based pricing makes it a unique and effective tool for language learners aiming to improve their conversational skills.

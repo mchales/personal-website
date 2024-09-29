@@ -190,7 +190,7 @@ Tacit Analysis creates categories and classifies ideas into categories. Particip
 
 Originally ideas were shown individually to the user and then ranked. Users could also provide feedback on each idea. This process was slow and we changed the mechanism to be list ranking where participants could move ideas up or down
 
-![[idea-ranking.jpg]]
+![Ask Tacit](/projects/tacit/idea-ranking.jpg)
 
 # Challenges
 Like many startups, Tacit failed. Here I will explain the reasons I believe that contributed to this.

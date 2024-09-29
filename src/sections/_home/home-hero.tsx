@@ -45,7 +45,7 @@ export function HomeHero({ sx, ...other }: BoxProps) {
       <AnimatedDiv>
         <Typography sx={{ width: { xs: 300, md: 700 } }}>
           I am an engineer with experience in full-stack development, machine learning, and data
-          analytics. Outside of work and academics, I enjoy playing
+          analytics. Outside of work and academics, I enjoy playing{' '}
           <Tooltip title="Feel free to friend me and we can play" arrow>
             <Link
               href="https://www.chess.com/member/greenskiearth"
