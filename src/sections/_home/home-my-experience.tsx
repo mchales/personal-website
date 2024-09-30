@@ -11,7 +11,7 @@ export function HomeMyExperience() {
   const skills = [
     {
       category: 'Web Development & Frameworks',
-      items: ['Django', 'React', 'RESTful API', 'Redux', 'Next.js', 'TypeScript'],
+      items: ['Django', 'React', 'RESTful API', 'CI/CD', 'Redux', 'Next.js', 'TypeScript'],
       icon: 'eva:code-outline',
     },
     {
@@ -25,6 +25,11 @@ export function HomeMyExperience() {
       icon: 'mdi:robot-outline',
     },
     {
+      category: 'Natural Language Processing',
+      items: ['OpenAI API', 'LangChain', 'Pinecone', 'NLTK', 'spaCy'],
+      icon: 'ic:outline-api',
+    },
+    {
       category: 'Cloud & Databases',
       items: ['PostgreSQL', 'Amazon RDS', 'Amazon S3', 'Amazon EMR', 'Heroku', 'Docker', 'Redis'],
       icon: 'carbon:cloud',
@@ -34,11 +39,7 @@ export function HomeMyExperience() {
       items: ['Spark', 'Hadoop', 'Celery', 'Redis'],
       icon: 'mdi:server-network',
     },
-    {
-      category: 'AI & APIs',
-      items: ['OpenAI API', 'LangChain', 'Pinecone'],
-      icon: 'ic:outline-api',
-    },
+
     {
       category: 'Data Scraping & Visualization',
       items: ['Scrapy', 'Plotly', 'BeautifulSoup', 'Tableau'],

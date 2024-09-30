@@ -8,9 +8,7 @@ export const TAG_PYTHON = 'Python';
 export const TAG_CPP = 'C++';
 export const TAG_JAVA = 'Java';
 export const TAG_JAVASCRIPT = 'JavaScript';
-export const TAG_C = 'C';
 export const TAG_SOLIDITY = 'Solidity';
-export const TAG_RUST = 'Rust';
 export const TAG_PANDAS = 'Pandas';
 export const TAG_NUMPY = 'NumPy';
 export const TAG_PYTORCH = 'PyTorch';
@@ -25,6 +23,7 @@ export const TAG_REDIS = 'Redis';
 export const TAG_SPARK = 'Spark';
 export const TAG_HADOOP = 'Hadoop';
 export const TAG_CELERY = 'Celery';
+export const TAG_CICD = 'CI/CD';
 export const TAG_AI = 'AI';
 export const TAG_OPENAI_API = 'OpenAI API';
 export const TAG_LANGCHAIN = 'LangChain';
@@ -32,44 +31,47 @@ export const TAG_PINECONE = 'Pinecone';
 export const TAG_SCRAPY = 'Scrapy';
 export const TAG_PLOTLY = 'Plotly';
 export const TAG_BEAUTIFULSOUP = 'BeautifulSoup';
-export const TAG_TABLEAU = 'Tableau';
 export const TAG_BIG_DATA = 'Big Data';
+export const TAG_NTLK = 'NLTK';
+export const TAG_SPACY = 'spaCy';
+export const TAG_FINE_TUNING = 'Fine-tuning';
 
 export const _tags = [
-  TAG_DJANGO,
-  TAG_REACT,
-  TAG_RESTFUL_API,
-  TAG_REDUX,
-  TAG_NEXT_JS,
-  TAG_TYPESCRIPT,
-  TAG_PYTHON,
-  TAG_CPP,
-  TAG_JAVA,
-  TAG_JAVASCRIPT,
-  TAG_C,
-  TAG_SOLIDITY,
-  TAG_RUST,
-  TAG_PANDAS,
-  TAG_NUMPY,
-  TAG_PYTORCH,
-  TAG_AZURE_ML,
-  TAG_POSTGRESQL,
+  TAG_AI,
+  TAG_AMAZON_EMR,
   TAG_AMAZON_RDS,
   TAG_AMAZON_S3,
-  TAG_AMAZON_EMR,
-  TAG_HEROKU,
-  TAG_DOCKER,
-  TAG_REDIS,
-  TAG_SPARK,
-  TAG_HADOOP,
-  TAG_CELERY,
-  TAG_AI,
-  TAG_OPENAI_API,
-  TAG_LANGCHAIN,
-  TAG_PINECONE,
-  TAG_SCRAPY,
-  TAG_PLOTLY,
+  TAG_AZURE_ML,
   TAG_BEAUTIFULSOUP,
-  TAG_TABLEAU,
   TAG_BIG_DATA,
+  TAG_CELERY,
+  TAG_CICD,
+  TAG_CPP,
+  TAG_DJANGO,
+  TAG_DOCKER,
+  TAG_FINE_TUNING,
+  TAG_HADOOP,
+  TAG_HEROKU,
+  TAG_JAVA,
+  TAG_JAVASCRIPT,
+  TAG_LANGCHAIN,
+  TAG_NEXT_JS,
+  TAG_NTLK,
+  TAG_NUMPY,
+  TAG_OPENAI_API,
+  TAG_PANDAS,
+  TAG_PINECONE,
+  TAG_PLOTLY,
+  TAG_POSTGRESQL,
+  TAG_PYTHON,
+  TAG_PYTORCH,
+  TAG_REACT,
+  TAG_REDIS,
+  TAG_REDUX,
+  TAG_RESTFUL_API,
+  TAG_SCRAPY,
+  TAG_SOLIDITY,
+  TAG_SPACY,
+  TAG_SPARK,
+  TAG_TYPESCRIPT,
 ];

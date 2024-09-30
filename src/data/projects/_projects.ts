@@ -3,17 +3,22 @@ import { CONFIG } from 'src/config-global';
 import * as TAGS from './assets';
 import { description as vrpdDescription } from './content/vrpd';
 import { description as tacitDescription } from './content/tacit';
-import { description as llmSummaryDescription } from './content/llm-summary';
-import { description as personalWebsiteDescription } from './content/personal-website';
-import { content as llmCodingEvalContent , description as llmCodingEvalDescription } from './content/llm-coding-eval'; // This will automatically import all constants from the index file
 import { description as llmNerDescription } from './content/llm-ner';
 import { description as hideDappDescription } from './content/hide-dapp';
+import { description as gensimLDADescription } from './content/gensim-lda';
+import { description as llmSummaryDescription } from './content/llm-summary';
 import { description as lechatNoirDescription } from './content/lechat-noir';
+import { description as personalWebsiteDescription } from './content/personal-website';
+import { description as nlpPolarizationDescription } from './content/nlp-polarization';
 import { description as emergencyResponseDescription } from './content/emergency-response';
 import { description as promptCompetitionDescription } from './content/prompt-competition';
 import { description as djangoAuthStarterDescription } from './content/django-auth-starter';
 import { description as videoTranslateCaptionDescription } from './content/video-translate-caption';
 import { description as chineseConversationLlmDescription } from './content/chinese-conversation-llm';
+import {
+  content as llmCodingEvalContent,
+  description as llmCodingEvalDescription,
+} from './content/llm-coding-eval';
 
 export const projectData = [
   {
@@ -110,6 +115,7 @@ export const projectData = [
       TAGS.TAG_REDIS,
       TAGS.TAG_CELERY,
       TAGS.TAG_RESTFUL_API,
+      TAGS.TAG_CICD,
       TAGS.TAG_REDUX,
       TAGS.TAG_PINECONE,
       TAGS.TAG_OPENAI_API,
@@ -192,15 +198,15 @@ export const projectData = [
   },
   {
     id: 'llm-ner',
-    duration: '5 min read',
-    title: 'Named Entity Recognition with LLM',
+    duration: '3 min read',
+    title: 'Named Entity Recognition with LLMs',
     description: llmNerDescription,
     status: 'Complete',
     team: '2',
-    tags: [TAGS.TAG_SCRAPY, TAGS.TAG_PYTHON, TAGS.TAG_BEAUTIFULSOUP, TAGS.TAG_OPENAI_API],
-    createdAt: '2023-04-28T11:00:00.000Z',
+    tags: [TAGS.TAG_SCRAPY, TAGS.TAG_PYTHON, TAGS.TAG_OPENAI_API],
+    createdAt: '2023-03-10T11:00:00.000Z',
     coverUrl: '/projects/llm-ner/scrape-job.webp',
-    content: 'To be added...',
+    content: '',
     github: 'https://github.com/mchales/forum-web-scraper',
     youtube: '',
 
@@ -295,6 +301,44 @@ export const projectData = [
     tags: [TAGS.TAG_PYTHON, TAGS.TAG_DJANGO, TAGS.TAG_RESTFUL_API],
     createdAt: '2024-08-20T11:00:00.000Z',
     coverUrl: '',
+    content: '',
+    github: 'https://github.com/mchales/django-auth-starter',
+    youtube: '',
+
+    author: {
+      name: 'Sean McHale',
+      avatarUrl: `${CONFIG.assetsDir}/assets/images/home/home-pic-1.webp`,
+    },
+  },
+  {
+    id: 'gensim-lda',
+    duration: '6 min read',
+    title: 'Topic Modeling with Gensim LDA',
+    description: gensimLDADescription,
+    status: 'Complete',
+    team: '1',
+    tags: [TAGS.TAG_PYTHON, TAGS.TAG_SPACY],
+    createdAt: '2023-03-20T11:00:00.000Z',
+    coverUrl: '/projects/gensim-lda/topics.jpg',
+    content: '',
+    github: '',
+    youtube: '',
+
+    author: {
+      name: 'Sean McHale',
+      avatarUrl: `${CONFIG.assetsDir}/assets/images/home/home-pic-1.webp`,
+    },
+  },
+  {
+    id: 'nlp-polarization',
+    duration: '5 min read',
+    title: 'NLP Analysis on Subreddit Polarization',
+    description: nlpPolarizationDescription,
+    status: 'Complete',
+    team: '4',
+    tags: [TAGS.TAG_PYTHON, TAGS.TAG_FINE_TUNING, TAGS.TAG_BIG_DATA, TAGS.TAG_LANGCHAIN],
+    createdAt: '2024-04-30T11:00:00.000Z',
+    coverUrl: '/projects/nlp-polarization/network.jpg',
     content: '',
     github: 'https://github.com/mchales/django-auth-starter',
     youtube: '',
