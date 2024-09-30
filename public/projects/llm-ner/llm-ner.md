@@ -69,7 +69,7 @@ def parse(self, response):
 - Extracts and cleans post text, separating metadata and specific details like symptoms.
 - Functions `extract_details` and `clean_post_text` handle the text extraction and cleaning.
 
-**Below is the important parts of the website for crawling and data collecition**
+**Below is the important parts of the website for crawling and data collection**
 ![Scraping Overview](/projects/llm-ner/scraping-overview.jpg)
 
 ## Data Cleaning and Labeling
