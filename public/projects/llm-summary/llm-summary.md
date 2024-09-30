@@ -60,6 +60,14 @@ To determine whether our generated summary is of high quality when compared to t
 ![ROUGE SCORES](/projects/llm-summary/rouge-scores.jpg)
 Unfortunately, Map & Refine did not perform well. A possible explanation for this could be that the complexity of combining the two methods introduces inefficiencies or redundancies in how the summaries are generated. The results of the refining step are quite large and in some instances, the first refine was included the most.
 
+### Other Techniques
+I formulated the other methods, however I did not implement them.
+
+- **AI Reinforced Random Summary:** This method splits the documents into chunks, randomly selects a percentage of the chunks, and then performs a summarization. The components in the summary are linked to the original chunks via metadata. Then we will prompt an LLM to find any incomplete parts of the summary. We will then provide the relevant (and nearby chunks) to improve the summary.
+
+- **Relevancy Score Tagging**: Before a summarization technique, a LLM rates chunks for relevancy. Then those that meet the threshold are used in the summarization technique.
+
+
 Additionally, we analyzed the runtime and token usage of each of the methods. MapRefine eliminates the slow runtime of Refine.
 
 ![Runtime Tokens](/projects/llm-summary/runtime-tokens.jpg)

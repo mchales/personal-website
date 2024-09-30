@@ -3,8 +3,6 @@
 import type { BoxProps } from '@mui/material/Box';
 import type { IProjectProps } from 'src/types/project';
 
-import remarkGfm from 'remark-gfm';
-import ReactMarkdown from 'react-markdown';
 import React, { useState, useEffect } from 'react';
 
 import Box from '@mui/material/Box';
@@ -26,6 +24,7 @@ import { fDate } from 'src/utils/format-time';
 import { CONFIG } from 'src/config-global';
 
 import { Markdown } from 'src/components/markdown';
+import MarkdownRenderer from 'src/components/markdown/markdown-renderer';
 
 import { ProjectTags } from '../project-tags';
 import { ProjectTime } from '../project-time';
@@ -128,7 +127,7 @@ export function ProjectView({ project }: ProjectProps) {
               <Markdown content={project.content} />
             ) : mdContent ? (
               <div className="mardown">
-                <ReactMarkdown remarkPlugins={[remarkGfm]}>{mdContent}</ReactMarkdown>
+                <MarkdownRenderer content={mdContent} />
               </div>
             ) : (
               <Container sx={{ alignContent: 'center', pt: 4 }}>
