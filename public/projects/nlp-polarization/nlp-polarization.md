@@ -1,4 +1,4 @@
-*\* I am currently traveling and the code for this project is on my desktop pc. Code blocks will be added Monday night.*
+*\* I am currently traveling and the code for this project is on my desktop pc. Code blocks will be added Tuesday night.*
 
 
 ## Israel-Palestine (IP) Based Polarization on Reddit Across Subreddits
@@ -25,14 +25,17 @@ We processed the dataset to clean and prepare it for modeling:
 - Tokenized the vocabulary, filtered frequent words, and retained active users (those with over 5 posts).
 
 ### Topic Modeling: LDA
-For **topic modeling**, we employed Latent Dirichlet Allocation (LDA) to uncover recurring themes. Using coherence scores, we settled on five distinct topics based on coherence scores:
+
+*For more information about topic modeling, LDA, and coherence scores check out this [post](/projects/gensim-lda/)*
+
+For **topic modeling**, we employed Latent Dirichlet Allocation (LDA) to uncover recurring themes. Using coherence scores, we settled on five distinct topics:
 1. **Conflict & Violence**
 2. **Hostage Situations**
 3. **Ideological Support & Opposition**
 4. **Social Media Engagement**
 5. **Jewish Identity & Geography**
 
-Each post was labeled with its dominant topic, and these scores were aggregated for users and subreddits. Our PCA analysis confirmed minimal overlap between topics, showcasing clear distinctions.
+Each post was labeled with its dominant topic, and these scores were aggregated for users and subreddits. Our [PCA](https://en.wikipedia.org/wiki/Principal_component_analysis#:~:text=Principal%20component%20analysis%20(PCA)%20is,analysis%2C%20visualization%20and%20data%20preprocessing.) analysis confirmed minimal overlap between topics, showcasing clear distinctions.
 
 ![LDA Polarization](/projects/nlp-polarization/lda-polarization.jpg)
 

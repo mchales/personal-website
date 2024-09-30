@@ -1,7 +1,7 @@
 
 ## Introduction
 
-This tutorial walks through a simple topic modeling project on posts from the weight loss r/loseit subreddit on Reddit. We will cover how to clean text, create tokens, and build an LDA model for topic modeling alonging with explaining important concepts. We'll also evaluate coherence scores and visualize the topics.
+This tutorial walks through a simple topic modeling project on posts from the weight loss r/loseit subreddit on Reddit. We will cover how to clean text, create tokens, and build an LDA model for topic modeling along with explaining important concepts. We'll also evaluate coherence scores and visualize the topics.
 
 ## Topic Modeling
 Topic modeling is a machine learning technique used to discover hidden themes or topics within large collections of text data. One of the most popular algorithms for this is Latent Dirichlet Allocation (LDA). LDA works by assuming that each document in a corpus is made up of a mixture of topics, and each topic is characterized by a distribution of words. The algorithm analyzes the co-occurrence of words across documents and assigns a probability distribution over topics for each document, as well as a distribution over words for each topic. This helps in identifying patterns and organizing unstructured text into interpretable themes.
