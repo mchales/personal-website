@@ -204,7 +204,7 @@ export const projectData = [
     status: 'Complete',
     team: '2',
     tags: [TAGS.TAG_SCRAPY, TAGS.TAG_PYTHON, TAGS.TAG_OPENAI_API],
-    createdAt: '2023-03-10T11:00:00.000Z',
+    createdAt: '2023-04-25T11:00:00.000Z',
     coverUrl: '/projects/llm-ner/scrape-job.webp',
     content: '',
     github: 'https://github.com/mchales/forum-web-scraper',
