@@ -21,7 +21,7 @@ export function HomeMyExperience() {
     },
     {
       category: 'Data Science & Machine Learning',
-      items: ['Pandas', 'NumPy', 'PyTorch', 'Azure Machine Learning'],
+      items: ['NumPy', 'Pandas', 'PyTorch', 'scikit-learn', 'Azure Machine Learning'],
       icon: 'mdi:robot-outline',
     },
     {
