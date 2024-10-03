@@ -1,5 +1,5 @@
 ## Introduction
-In this project I explored using GPT-3.5 to extract medical information from breast cancer forum posts, focusing on medications, symptoms, and treatment perspectives. I scraped and labeled a dataset of 100 posts and tested three types of prompts: basic, with examples, and with reasoning. While GPT-3.5-turbo performed inconsistently, often rephrasing or misclassifying symptoms, prompts with examples provided better results. I concluded that this model and prompt approach has limitations for practical NER tasks.
+In this project I explored using GPT-3.5 and GPT-4.0 to extract medical information from breast cancer forum posts, focusing on medications, symptoms, and treatment perspectives. I scraped and labeled a dataset of 100 posts and tested three types of prompts: basic, with examples, and with reasoning. However, both GPT-3.5-turbo and GPT-4.0 performed inconsistently (althought GPT-4.0 performed better), often rephrasing or misclassifying symptoms, prompts with examples provided better results. I concluded that these models and prompt approach has limitations for practical NER tasks.
 
 ## Data Collection
 To collect data I scraped 7000+ posts from a [breast cancer forum](https://community.breastcancer.org/forum/78). I used [Scrapy](https://scrapy.org/) which I choose over [BeautifulSoup](https://pypi.org/project/beautifulsoup4/) for it's native web crawling abilities.
@@ -107,18 +107,21 @@ To query ChatGPT with the questions we used three types of prompts:
 
 
 ## Results: Medications and Symptoms
-![Medication Symptoms NER Results](/projects/llm-ner/medication-results.jpg)
+![Medication Symptoms 3.5 NER Results](/projects/llm-ner/3.5-ner-results.jpg)
 
 Unfortunately, the model perfomed very poorly on NER metrics. The model has difficulty differentiating between symptoms the patient has versus symptoms they are asking about.
+
+![Medication Symptoms 4.o NER Results](/projects/llm-ner/4.0-ner-results.jpg)
+Shortly after, we collected the GPT-3.5 results, GPT-4.0 was released and we also used this model for NER metrics. Unfortunately, there was not a drastic increase in performance.
 
 ## Results: Status
 ![Status Results](/projects/llm-ner/status-results.jpg)
 
-The model did a better job at predicting the status of the user
+The GPT-3.5 model did a better job at predicting the status of the user
 
 ## Possible Product
 If performance can be increased, this could be used as a tool for doctors to easily recognize patient medication and symtoms in text data.
 ![Prototype](/projects/llm-ner/sample-usage.gif)
 
 ## Conclusion
-The current approach using GPT-3.5 for Named Entity Recognition (NER) in medical forums, specifically breast cancer discussions, had poor performance. The model was inconsistent, particularly in differentiating between symptoms experienced by patients and those mentioned in a general context. Despite these challenges, advancements in newer models (which weren't available during this project) could potentially enhance accuracy, making this a promising area for future exploration and improvement in medical text processing.
+The current approach using GPT-3.5 and GPT-4.0 for Named Entity Recognition (NER) in medical forums, specifically breast cancer discussions, had lack luster performance. The models were inconsistent, particularly in differentiating between symptoms experienced by patients and those mentioned in a general context. Additionally, there were some seemingly hallucination-like responses.
