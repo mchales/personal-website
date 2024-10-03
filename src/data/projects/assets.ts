@@ -35,6 +35,7 @@ export const TAG_BIG_DATA = 'Big Data';
 export const TAG_NTLK = 'NLTK';
 export const TAG_SPACY = 'spaCy';
 export const TAG_FINE_TUNING = 'Fine-tuning';
+export const TAG_SCIKIT_LEARN = 'scikit-learn';
 
 export const _tags = [
   TAG_AI,
@@ -70,6 +71,7 @@ export const _tags = [
   TAG_REDUX,
   TAG_RESTFUL_API,
   TAG_SCRAPY,
+  TAG_SCIKIT_LEARN,
   TAG_SOLIDITY,
   TAG_SPACY,
   TAG_SPARK,
