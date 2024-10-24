@@ -347,7 +347,7 @@ export const projectData = [
     createdAt: '2024-04-30T11:00:00.000Z',
     coverUrl: '/projects/nlp-polarization/network.jpg',
     content: '',
-    github: 'https://github.com/mchales/django-auth-starter',
+    github: '',
     youtube: '',
 
     author: {
