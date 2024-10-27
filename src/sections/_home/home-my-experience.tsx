@@ -11,7 +11,16 @@ export function HomeMyExperience() {
   const skills = [
     {
       category: 'Web Development & Frameworks',
-      items: ['Django', 'React', 'RESTful API', 'CI/CD', 'Redux', 'Next.js', 'TypeScript'],
+      items: [
+        'Django',
+        'React',
+        'RESTful API',
+        'CI/CD',
+        'Redux',
+        'Next.js',
+        'TypeScript',
+        'pytest',
+      ],
       icon: 'eva:code-outline',
     },
     {
