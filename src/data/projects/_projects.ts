@@ -236,8 +236,8 @@ export const projectData = [
     createdAt: '',
     coverUrl: '/projects/chinese-conversation-llm/prototype.webp',
     content: '',
-    github: '',
-    youtube: '',
+    github: 'https://github.com/mchales/huispeak-backend',
+    youtube: 'https://youtu.be/DCjocpQmyfM',
 
     author: {
       name: 'Sean McHale',
