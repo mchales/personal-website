@@ -225,6 +225,7 @@ export const projectData = [
     tags: [
       TAGS.TAG_PYTHON,
       TAGS.TAG_DJANGO,
+      TAGS.TAG_TYPESCRIPT,
       TAGS.TAG_REACT,
       TAGS.TAG_POSTGRESQL,
       TAGS.TAG_RESTFUL_API,
@@ -235,8 +236,8 @@ export const projectData = [
     createdAt: '',
     coverUrl: '/projects/chinese-conversation-llm/prototype.webp',
     content: '',
-    github: '',
-    youtube: '',
+    github: 'https://github.com/mchales/huispeak-backend',
+    youtube: 'https://youtu.be/DCjocpQmyfM',
 
     author: {
       name: 'Sean McHale',
@@ -254,12 +255,9 @@ export const projectData = [
     tags: [
       TAGS.TAG_PYTHON,
       TAGS.TAG_DJANGO,
-      TAGS.TAG_REACT,
       TAGS.TAG_POSTGRESQL,
       TAGS.TAG_RESTFUL_API,
-      TAGS.TAG_REDUX,
       TAGS.TAG_OPENAI_API,
-      TAGS.TAG_NEXT_JS,
     ],
     createdAt: '',
     coverUrl: '',
