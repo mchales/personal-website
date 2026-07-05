@@ -17,9 +17,10 @@ const sortedProjects = projectData.sort((a, b) => {
   const dateA = new Date(a.createdAt).getTime();
   const dateB = new Date(b.createdAt).getTime();
 
-  // If b.createdAt is empty, sort it first
-  if (!b.createdAt) return 1;
-  if (!a.createdAt) return -1;
+  // Keep undated projects after dated ones, then sort dated entries newest first.
+  if (!a.createdAt && !b.createdAt) return 0;
+  if (!b.createdAt) return -1;
+  if (!a.createdAt) return 1;
 
   return dateB - dateA;
 });

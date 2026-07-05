@@ -1,6 +1,6 @@
 export const description = `
 
-Developing a web application to help Chinese language learners practice conversation with a
-focus on Chinese cultural elements and practical situations.
+Built a conversation-based web application that helps Chinese language learners practice
+through immersive role-playing, cultural storytelling, and practical real-world scenarios.
 
 `;

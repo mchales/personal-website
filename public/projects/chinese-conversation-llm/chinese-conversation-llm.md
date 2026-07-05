@@ -1,37 +1,44 @@
-For many language learners, mastering speaking and listening skills presents significant challenges. While studying Chinese, real-world conversations can be intimidating, especially when learning in a non-native environment. Regular practice is essential, but finding reliable practice opportunities or an affordable solution isn't always easy.
+For many language learners, speaking and listening are the hardest skills to practice consistently. HuiSpeak was built to make that practice more accessible by giving Chinese learners a low-pressure way to hold guided conversations that combine cultural context, role-playing, and practical communication.
 
+## The Finished Product
 
-## The Solution: A Conversation-Based Learning Web App
+HuiSpeak is a conversation-based language learning web app powered by **ChatGPT** and the **Whisper API**. It gives learners structured scenarios where they can practice speaking in Chinese, respond naturally, and review the conversation afterward. The finished experience balances immersive storytelling with practical everyday situations so practice feels both useful and motivating.
 
-A conversation-based language learning web app addresses this gap by enabling users to engage in practical conversations powered by **ChatGPT** and the **Whisper API**. There will be a strong emphasis on practical situations, role-playing, and cultural elements. Additionally, there will be a high level of personalization through using user-submitted information and custom prompting. I additionally plan to have three different levels of language practice, each with a storyline. This storyline will contain practical situations, cultural elements, and media to keep the user highly motivated.
+### How the Application Works
 
-### How the Application Works:
-
-1. **User Onboarding**: Users sign in to create their account.
-2. **Selecting Scenarios**: They choose from a variety of conversation situations, ranging from beginner to advanced levels.
-3. **Engage in Conversations**: Users participate in dialogues with ChatGPT through voice input, powered by the Whisper API. This provides an experience close to natural conversation.
-4. **Feedback & Review**: After each session, users can review the dialogue and receive feedback to help improve their language skills.
+1. **User onboarding**: Learners create an account and set up their practice experience.
+2. **Scenario selection**: Users choose a conversation scenario based on the kind of speaking practice they want.
+3. **Voice-based conversation**: Learners speak with the assistant through voice input for a more natural practice loop.
+4. **Feedback and review**: After each session, users can review the dialogue and reflect on how they responded.
 
 ### Key Features
 
-- **Cost-Effective**: The pricing model is based on API token usage, making it a more affordable alternative to traditional language apps.
-- **Contextual Scenarios**: Users can practice in specific real-world situations like ordering food or speaking with a delivery person, providing relevant experience for practical use.
-- **Level-Based Practice**: The web app offers different difficulty levels, allowing learners to choose the level that best suits their language proficiency.
+- **Immersive role-playing**: Story-driven scenarios make speaking practice more engaging than flashcards or isolated prompts.
+- **Practical situations**: Users can practice conversations they may actually need in real life.
+- **Cultural context**: Scenarios are designed to expose learners to Chinese cultural themes in addition to vocabulary.
+- **Personalized practice**: Prompting and scenario design support a more tailored learning experience.
 
-## What Makes It Different?
+## Example Experiences
 
-### LLM-Powered Conversations
-By leveraging large language models (LLMs) like ChatGPT, the web app creates a low-pressure environment for users to practice speaking. This reduces the anxiety that many language learners feel when speaking to another person, providing an opportunity for practice without the need for a human language partner.
+### Journey to the West Role-Playing
 
-### Real-Life Situations
-The application’s focus on real-world, practical conversations means users can develop language skills that are directly applicable to their daily lives. From receiving deliveries to casual chats, the scenarios are designed to be as relevant and useful as possible.
+One part of HuiSpeak focuses on more immersive, story-based practice. In this scenario, the learner enters a Journey to the West-inspired adventure and has to speak with the Monkey King as part of the story. This gives users a more memorable role-playing experience while still practicing real conversation.
 
-## Current Progress
-### Software Architecture
+![Journey to the West role-playing scenario](/projects/chinese-conversation-llm/meet-monkey-king.webp)
+
+### Practical Scenario: Checking Into a Hotel
+
+HuiSpeak also includes more grounded practice for everyday communication. This hotel check-in scenario helps learners practice greeting someone, asking about room availability, requesting accommodations, and confirming details in a realistic setting.
+
+![Hotel check-in scenario](/projects/chinese-conversation-llm/hotel-check-in.webp)
+
+## Software Architecture
+
 ![Software Architecture](/projects/chinese-conversation-llm/software-architecture.png)
-- Calling OpenAI from the frontend for the conversation component reduces code complexity. The OpenAI Assistants manages the conversation history.
 
+- Calling OpenAI from the frontend for the conversation component keeps the implementation simpler.
+- The OpenAI assistant manages conversation history so users can continue a scenario naturally.
 
-### Progress Video
-[Video](https://youtu.be/DCjocpQmyfM)
+## Demo
 
+[Video](https://youtu.be/IX3PtzKD8BM)
