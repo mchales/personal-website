@@ -15,17 +15,17 @@ export function HomeMyExperience() {
         'Django',
         'React',
         'RESTful API',
+        'C3 Platform',
         'CI/CD',
         'Redux',
         'Next.js',
-        'TypeScript',
         'pytest',
       ],
       icon: 'eva:code-outline',
     },
     {
       category: 'Programming Languages',
-      items: ['Python', 'C++', 'Java', 'JavaScript', 'C', 'Solidity', 'Rust'],
+      items: ['Python', 'JavaScript', 'TypeScript', 'Java', 'C++', 'C', 'Solidity'],
       icon: 'mdi:language-cpp',
     },
     {
@@ -35,7 +35,7 @@ export function HomeMyExperience() {
     },
     {
       category: 'Natural Language Processing',
-      items: ['OpenAI API', 'LangChain', 'Pinecone', 'NLTK', 'spaCy'],
+      items: ['Claude Code', 'OpenAI API', 'LangChain', 'Pinecone', 'NLTK', 'spaCy'],
       icon: 'ic:outline-api',
     },
     {
@@ -45,7 +45,7 @@ export function HomeMyExperience() {
     },
     {
       category: 'Big Data & Distributed Systems',
-      items: ['Spark', 'Hadoop', 'Celery', 'Redis'],
+      items: ['Grafana', 'OpenSearch', 'Spark', 'Hadoop', 'Redis'],
       icon: 'mdi:server-network',
     },
 
@@ -74,14 +74,15 @@ export function HomeMyExperience() {
           </m.div>
           <m.div variants={varFade().inUp}>
             <Typography variant="h5" color="text.secondary">
-              MSCS Student at Georgia Institute of Technology
+              Forward Deployed Engineer at C3 AI
             </Typography>
           </m.div>
           <m.div variants={varFade().inUp}>
             <Typography variant="body1" sx={{ mt: 3 }}>
-              I am currently a MSCS student at Georgia Institute of Technology graduating in
-              December 2024. I did my undergraduate at Vanderbilt University in Computer Science and
-              Applied Mathematics.
+              I am a Forward Deployed Engineer at C3 AI building enterprise AI applications for
+              large-scale customer deployments. I earned my MS in Computer Science with a machine
+              learning specialization from Georgia Tech and my undergraduate degree from Vanderbilt
+              in Computer Science and Applied Mathematics.
             </Typography>
           </m.div>
         </Box>
@@ -94,9 +95,10 @@ export function HomeMyExperience() {
               </m.div>
               <m.div variants={varFade().inUp}>
                 <Typography variant="body1">
-                  Most of my projects are in the realm of web development, data science, and machine
-                  learning. I am always looking for new projects to work on and new technologies to
-                  learn.
+                  My work spans enterprise AI delivery, full-stack product development, data
+                  integration, and testing. I enjoy owning projects end to end, from shaping the
+                  solution and building customer-facing features to deployment and iteration in
+                  production that delivers real value for customers.
                 </Typography>
               </m.div>
               <m.div variants={varFade().inUp}>
@@ -104,9 +106,9 @@ export function HomeMyExperience() {
               </m.div>
               <m.div variants={varFade().inUp}>
                 <Typography variant="body1">
-                  In my most recent role as the Founding Engineer at{' '}
+                  At{' '}
                   <Link
-                    href="https://www.linkedin.com/company/tacitsolutions/"
+                    href="https://c3.ai/"
                     target="_blank"
                     rel="noopener noreferrer"
                     sx={{
@@ -120,22 +122,19 @@ export function HomeMyExperience() {
                       },
                     }}
                   >
-                    Tacit
+                    C3 AI
                   </Link>
-                  , a Vanderbilt student-based AI startup, I led the development of an MVP for a
-                  qualitative data collection platform. This platform facilitated one-on-one,
-                  scalable conversations between participants and an AI assistant. Think of a
-                  survey, but instead of simple responses, participants engage in conversations with
-                  an AI assistant where deeper insights and details are shared. Key ideas are
-                  tracked and reintroduced to other users for validation. All conversation and idea
-                  data is processed and displayed for easy exploration.
+                  , I build and deliver enterprise AI applications on the C3 AI Platform by
+                  designing solutions, developing customer-facing features, integrating data, and
+                  managing production deployments.
                 </Typography>
               </m.div>
               <m.div variants={varFade().inUp}>
                 <Typography variant="body1">
-                  Although the project was eventually suspended, the experience gave me invaluable
-                  lessons in building AI-driven products from the ground up, AGILE development, and
-                  managing real-time updates on a live product.
+                  Before C3 AI, I was the founding engineer at Tacit, where I led development of an
+                  AI-powered qualitative research platform. That mix of startup product work and
+                  enterprise delivery has made me effective both in fast iteration and in shipping
+                  reliable systems for production customers.
                 </Typography>
               </m.div>
               <m.div variants={varFade().inUp}>
@@ -166,7 +165,7 @@ export function HomeMyExperience() {
                 <Typography variant="body1" sx={{ mt: 1 }}>
                   You can also download my resume here:{' '}
                   <Link
-                    href="/assets/resume.pdf"
+                    href="/assets/sean-mchale-resume.pdf"
                     target="_blank"
                     rel="noopener noreferrer"
                     download

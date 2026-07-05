@@ -44,8 +44,8 @@ export function HomeHero({ sx, ...other }: BoxProps) {
 
       <AnimatedDiv>
         <Typography sx={{ width: { xs: 300, md: 700 } }}>
-          I am an engineer with experience in full-stack development, machine learning, and data
-          analytics. Outside of work and academics, I enjoy playing{' '}
+          Engineer with experience building enterprise AI applications, full stack development, and
+          AI integrations. Outside of work, I enjoy playing{' '}
           <Tooltip title="Feel free to friend me and we can play" arrow>
             <Link
               href="https://www.chess.com/member/greenskiearth"
@@ -65,7 +65,7 @@ export function HomeHero({ sx, ...other }: BoxProps) {
               chess
             </Link>
           </Tooltip>
-          , being outdoors, and traveling.
+          , cooking, and traveling.
         </Typography>
       </AnimatedDiv>
 

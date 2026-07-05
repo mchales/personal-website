@@ -11,10 +11,13 @@ import { description as lechatNoirDescription } from './content/lechat-noir';
 import { description as personalWebsiteDescription } from './content/personal-website';
 import { description as nlpPolarizationDescription } from './content/nlp-polarization';
 import { description as emergencyResponseDescription } from './content/emergency-response';
-import { description as promptCompetitionDescription } from './content/prompt-competition';
 import { description as djangoAuthStarterDescription } from './content/django-auth-starter';
 import { description as videoTranslateCaptionDescription } from './content/video-translate-caption';
 import { description as chineseConversationLlmDescription } from './content/chinese-conversation-llm';
+import {
+  content as huistackContent,
+  description as huistackDescription,
+} from './content/huistack';
 import {
   content as llmCodingEvalContent,
   description as llmCodingEvalDescription,
@@ -48,7 +51,7 @@ export const projectData = [
     status: 'Ongoing',
     team: '1',
     tags: [TAGS.TAG_REACT, TAGS.TAG_NEXT_JS, TAGS.TAG_TYPESCRIPT, TAGS.TAG_OPENAI_API],
-    createdAt: '',
+    createdAt: '2026-07-05T11:00:00.000Z',
     coverUrl: '',
     content: '',
     github: 'https://github.com/mchales/personal-website',
@@ -218,9 +221,9 @@ export const projectData = [
   {
     id: 'chinese-conversation-llm',
     duration: '3 min read',
-    title: 'Conversation-based LLM App for Practical Chinese Language Learning',
+    title: 'HuiSpeak: Conversation-based LLM App for Practical Chinese Language Learning',
     description: chineseConversationLlmDescription,
-    status: 'Ongoing',
+    status: 'Complete',
     team: '1',
     tags: [
       TAGS.TAG_PYTHON,
@@ -233,35 +236,40 @@ export const projectData = [
       TAGS.TAG_OPENAI_API,
       TAGS.TAG_NEXT_JS,
     ],
-    createdAt: '',
-    coverUrl: '/projects/chinese-conversation-llm/prototype.webp',
+    createdAt: '2026-06-01T11:00:00.000Z',
+    coverUrl: '/projects/chinese-conversation-llm/conversation.webp',
     content: '',
     github: 'https://github.com/mchales/huispeak-backend',
-    youtube: 'https://youtu.be/DCjocpQmyfM',
+    youtube: 'https://youtu.be/IX3PtzKD8BM',
 
     author: {
       name: 'Sean McHale',
       avatarUrl: `${CONFIG.assetsDir}/assets/images/home/home-pic-1.webp`,
     },
   },
-
   {
-    id: 'prompt-competition',
-    duration: '1 min read',
-    title: 'Prompt Engineering Competition Web App',
-    description: promptCompetitionDescription,
+    id: 'huistack',
+    duration: '7 min read',
+    title: 'HuiStack: Full-Stack Chinese Learning Platform',
+    description: huistackDescription,
     status: 'Ongoing',
     team: '1',
     tags: [
       TAGS.TAG_PYTHON,
       TAGS.TAG_DJANGO,
+      TAGS.TAG_TYPESCRIPT,
+      TAGS.TAG_REACT,
       TAGS.TAG_POSTGRESQL,
       TAGS.TAG_RESTFUL_API,
+      TAGS.TAG_NEXT_JS,
       TAGS.TAG_OPENAI_API,
+      TAGS.TAG_DOCKER,
+      TAGS.TAG_AMAZON_S3,
+      TAGS.TAG_CICD,
     ],
-    createdAt: '',
-    coverUrl: '',
-    content: '',
+    createdAt: '2026-07-05T11:00:00.000Z',
+    coverUrl: '/projects/huistack/lesson-video-view.jpg',
+    content: huistackContent,
     github: '',
     youtube: '',
 
@@ -270,6 +278,32 @@ export const projectData = [
       avatarUrl: `${CONFIG.assetsDir}/assets/images/home/home-pic-1.webp`,
     },
   },
+
+  // {
+  //   id: 'prompt-competition',
+  //   duration: '1 min read',
+  //   title: 'Prompt Engineering Competition Web App',
+  //   description: promptCompetitionDescription,
+  //   status: 'Ongoing',
+  //   team: '1',
+  //   tags: [
+  //     TAGS.TAG_PYTHON,
+  //     TAGS.TAG_DJANGO,
+  //     TAGS.TAG_POSTGRESQL,
+  //     TAGS.TAG_RESTFUL_API,
+  //     TAGS.TAG_OPENAI_API,
+  //   ],
+  //   createdAt: '',
+  //   coverUrl: '',
+  //   content: '',
+  //   github: '',
+  //   youtube: '',
+
+  //   author: {
+  //     name: 'Sean McHale',
+  //     avatarUrl: `${CONFIG.assetsDir}/assets/images/home/home-pic-1.webp`,
+  //   },
+  // },
   {
     id: 'video-translate-caption',
     duration: '5 min read',
